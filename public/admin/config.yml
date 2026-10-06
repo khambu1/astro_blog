@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: khambu1/astro_blog
+  name: turbo-github
+  turbo_site_id: 50bdf7ac-9a24-4af6-ab71-bad38a1b2f88
   branch: main
 
 media_folder: "src/assets/blog"
@@ -41,3 +41,7 @@ collections:
         name: "image"
         widget: "image"
         required: false
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
