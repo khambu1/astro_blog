@@ -1,0 +1,123 @@
+<section class="about" id="about">
+  <div class="visual">
+    <div class="circle">
+      G
+    </div>
+
+    <div class="floating-card">
+      <strong>+124%</strong>
+      <span>Organic Traffic</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <p class="eyebrow">WHY GROWTHLY</p>
+
+    <h2>
+      Strategy first.
+      <span>Results always.</span>
+    </h2>
+
+    <p>
+      We don't believe in marketing for the sake of marketing.
+      Every campaign starts with a clear business goal and ends
+      with measurable results.
+    </p>
+
+    <p>
+      Our team combines creative thinking, data, and technology
+      to help brands compete in an increasingly digital world.
+    </p>
+
+    <a href="#contact">
+      Work with us →
+    </a>
+  </div>
+</section>
+
+<style>
+  .about {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .visual {
+    min-height: 500px;
+    background: #111;
+    border-radius: 30px;
+
+    display: grid;
+    place-items: center;
+
+    position: relative;
+  }
+
+  .circle {
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+    background: #b8f34a;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 120px;
+    font-weight: 900;
+  }
+
+  .floating-card {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .floating-card strong {
+    font-size: 28px;
+  }
+
+  .floating-card span {
+    color: #686868;
+    font-size: 12px;
+  }
+
+  .content h2 {
+    font-size: 60px;
+    line-height: 0.95;
+  }
+
+  .content h2 span {
+    color: #888;
+  }
+
+  .content > p:not(.eyebrow) {
+    color: #686868;
+    line-height: 1.7;
+  }
+
+  .content a {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 700px) {
+    .about {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+</style>

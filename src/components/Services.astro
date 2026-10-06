@@ -1,0 +1,134 @@
+---
+const services = [
+  {
+    number: "01",
+    title: "SEO",
+    description:
+      "Improve your search visibility and attract the right audience."
+  },
+  {
+    number: "02",
+    title: "Social Media",
+    description:
+      "Build an engaging social presence that turns followers into customers."
+  },
+  {
+    number: "03",
+    title: "Paid Advertising",
+    description:
+      "Reach your ideal customers with targeted advertising campaigns."
+  },
+  {
+    number: "04",
+    title: "Content Marketing",
+    description:
+      "Create valuable content that builds trust and generates leads."
+  }
+];
+---
+
+<section class="services-section" id="services">
+  <div class="heading">
+    <div>
+      <p class="eyebrow">WHAT WE DO</p>
+
+      <h2>
+        Marketing that
+        <span>moves business forward.</span>
+      </h2>
+    </div>
+
+    <p>
+      From strategy to execution, we create marketing systems
+      that generate attention, leads, and sustainable growth.
+    </p>
+  </div>
+
+  <div class="services">
+    {services.map((service) => (
+      <article class="service">
+        <span>{service.number}</span>
+
+        <div>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </div>
+
+        <strong>↗</strong>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .services-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 130px 30px;
+  }
+
+  .heading {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    gap: 80px;
+    margin-bottom: 70px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: clamp(45px, 5vw, 70px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+  }
+
+  h2 span {
+    color: #888;
+  }
+
+  .heading > p {
+    color: #686868;
+    line-height: 1.7;
+  }
+
+  .service {
+    display: grid;
+    grid-template-columns: 80px 1fr 40px;
+    gap: 30px;
+    align-items: center;
+
+    padding: 35px 0;
+
+    border-top: 1px solid #ddd;
+  }
+
+  .service > span {
+    color: #999;
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    font-size: 27px;
+  }
+
+  .service p {
+    margin: 0;
+    color: #686868;
+  }
+
+  @media (max-width: 700px) {
+    .heading {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .service {
+      grid-template-columns: 40px 1fr 20px;
+      gap: 15px;
+    }
+  }
+</style>

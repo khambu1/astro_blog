@@ -1,0 +1,93 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "../../components/BlogCard.astro";
+
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+import "../../styles/global.css";
+
+const posts = await getCollection("blog");
+---
+
+<Layout
+  title="Blog — Growthly"
+  description="Insights, strategies, and ideas about digital marketing."
+>
+  <Header />
+
+  <main>
+    <section class="blog-hero">
+      <p class="eyebrow">OUR BLOG</p>
+
+      <h1>
+        Ideas for
+        <span>growing online.</span>
+      </h1>
+
+      <p>
+        Practical insights about SEO, social media, content,
+        advertising, and digital marketing.
+      </p>
+    </section>
+
+    <section class="posts">
+      {posts.map((post) => (
+        <BlogCard post={post} />
+      ))}
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .blog-hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 30px 100px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .blog-hero h1 {
+    max-width: 900px;
+    margin: 25px 0;
+
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+  }
+
+  .blog-hero h1 span {
+    color: #888;
+  }
+
+  .blog-hero > p:last-child {
+    max-width: 600px;
+    color: #686868;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .posts {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 120px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 700px) {
+    .posts {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

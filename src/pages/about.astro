@@ -1,0 +1,131 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+---
+
+<Layout
+  title="About — Growthly"
+  description="Learn more about Growthly and our approach to digital marketing."
+>
+  <Header />
+
+  <main>
+    <section class="about-hero">
+      <p class="eyebrow">ABOUT GROWTHLY</p>
+
+      <h1>
+        We help brands
+        <span>grow with purpose.</span>
+      </h1>
+
+      <p class="description">
+        Growthly is a digital marketing agency focused on helping
+        ambitious businesses build stronger brands, reach the right
+        audience, and generate measurable results.
+      </p>
+    </section>
+
+    <section class="story">
+      <div>
+        <p class="eyebrow">OUR STORY</p>
+        <h2>
+          Marketing should create
+          <span>real business value.</span>
+        </h2>
+      </div>
+
+      <div class="story-content">
+        <p>
+          We started Growthly with a simple idea: businesses
+          shouldn't have to guess whether their marketing is working.
+        </p>
+
+        <p>
+          We combine strategy, creativity, and data to create
+          marketing campaigns that are built around actual business
+          goals.
+        </p>
+
+        <p>
+          From search and social media to paid advertising and
+          content, we help businesses build a stronger digital
+          presence.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .about-hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 30px 150px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    max-width: 900px;
+    margin: 25px 0;
+
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+  }
+
+  h1 span {
+    color: #888;
+  }
+
+  .description {
+    max-width: 650px;
+    color: #686868;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+
+  .story {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    border-top: 1px solid #ddd;
+  }
+
+  h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+  }
+
+  h2 span {
+    color: #888;
+  }
+
+  .story-content {
+    color: #686868;
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  @media (max-width: 700px) {
+    .story {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+</style>

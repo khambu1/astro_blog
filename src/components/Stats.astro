@@ -1,0 +1,67 @@
+---
+const stats = [
+  {
+    value: "120+",
+    label: "Projects Completed"
+  },
+  {
+    value: "85%",
+    label: "Average Growth"
+  },
+  {
+    value: "40+",
+    label: "Happy Clients"
+  },
+  {
+    value: "5+",
+    label: "Years Experience"
+  }
+];
+---
+
+<section class="stats" id="results">
+  {stats.map((stat) => (
+    <div class="stat">
+      <strong>{stat.value}</strong>
+      <span>{stat.label}</span>
+    </div>
+  ))}
+</section>
+
+<style>
+  .stats {
+    max-width: 1140px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .stat {
+    padding: 35px 20px;
+    border-right: 1px solid #ddd;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stat strong {
+    font-size: 40px;
+  }
+
+  .stat span {
+    color: #686868;
+    font-size: 13px;
+  }
+
+  @media (max-width: 700px) {
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 20px;
+    }
+  }
+</style>

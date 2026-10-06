@@ -1,0 +1,159 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+
+const services = [
+  {
+    number: "01",
+    title: "SEO",
+    description:
+      "Improve your search visibility and attract qualified visitors through a strong organic search strategy."
+  },
+  {
+    number: "02",
+    title: "Social Media",
+    description:
+      "Build an engaging social presence that helps your brand connect with the right audience."
+  },
+  {
+    number: "03",
+    title: "Paid Advertising",
+    description:
+      "Reach potential customers with targeted advertising campaigns designed around measurable goals."
+  },
+  {
+    number: "04",
+    title: "Content Marketing",
+    description:
+      "Create useful and engaging content that builds trust, attracts visitors, and generates leads."
+  }
+];
+---
+
+<Layout
+  title="Services — Growthly"
+  description="Explore Growthly's digital marketing services."
+>
+  <Header />
+
+  <main>
+    <section class="services-hero">
+      <p class="eyebrow">OUR SERVICES</p>
+
+      <h1>
+        Digital marketing
+        <span>built for growth.</span>
+      </h1>
+
+      <p class="description">
+        We combine strategy, creativity, and technology to help
+        businesses build a stronger digital presence.
+      </p>
+    </section>
+
+    <section class="services-list">
+      {
+        services.map((service) => (
+          <article class="service">
+            <span class="number">{service.number}</span>
+
+            <div class="content">
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+            </div>
+
+            <span class="arrow">↗</span>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .services-hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 30px 100px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    max-width: 900px;
+    margin: 25px 0;
+
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+  }
+
+  h1 span {
+    color: #888;
+  }
+
+  .description {
+    max-width: 600px;
+    color: #686868;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .services-list {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 120px;
+  }
+
+  .service {
+    display: grid;
+    grid-template-columns: 80px 1fr 40px;
+    gap: 30px;
+
+    padding: 40px 0;
+
+    border-top: 1px solid #ddd;
+  }
+
+  .number {
+    color: #999;
+    font-size: 14px;
+  }
+
+  .content h2 {
+    margin: 0 0 15px;
+    font-size: 35px;
+  }
+
+  .content p {
+    max-width: 600px;
+    margin: 0;
+
+    color: #686868;
+    line-height: 1.7;
+  }
+
+  .arrow {
+    font-size: 25px;
+  }
+
+  @media (max-width: 700px) {
+    .service {
+      grid-template-columns: 40px 1fr 20px;
+      gap: 15px;
+    }
+
+    .content h2 {
+      font-size: 27px;
+    }
+  }
+</style>

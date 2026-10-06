@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+---
+<a href={`/blog/${post.id}`}>
+<article class="post">
+  {post.data.image && (
+    <Image
+      class="post-image"
+      src={post.data.image.src}
+      alt={post.data.image.alt}
+      width={800}
+      height={450}
+    />
+  )}
+
+  <div class="post-content">
+    <div class="meta">
+      <span>{post.data.category}</span>
+      <span>{post.data.pubDate.toLocaleDateString()}</span>
+    </div>
+
+    <h2>{post.data.title}</h2>
+
+    <p>{post.data.description}</p>
+
+    
+      Read Article →
+    
+  </div>
+</article>
+</a>
+
+<style>
+  .post {
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+  }
+
+  .post-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .post-content {
+    padding: 25px;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #888;
+    font-size: 12px;
+  }
+
+  h2 {
+    margin: 0 0 15px;
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .post p {
+    color: #686868;
+    line-height: 1.7;
+  }
+
+  .post a {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 700;
+  }
+</style>
