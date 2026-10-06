@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: khambu1/astro_blog
+  branch: main
+
+media_folder: "src/assets/blog"
+public_folder: "/src/assets/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+
+      - label: "Publish Date"
+        name: "pubDate"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+
+      - label: "Category"
+        name: "category"
+        widget: "string"
+
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
